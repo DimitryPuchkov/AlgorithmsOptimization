@@ -1,0 +1,4 @@
+﻿  MAPA_PZ3.cpp
+C:\Users\lemon\source\repos\MAPA_PZ3\MAPA_PZ3\MAPA_PZ3.cpp(25,15): warning C4101: 'j': unreferenced local variable
+C:\Users\lemon\source\repos\MAPA_PZ3\MAPA_PZ3\MAPA_PZ3.cpp(39,13): warning C4101: 'status': unreferenced local variable
+  MAPA_PZ3.vcxproj -> C:\Users\lemon\source\repos\MAPA_PZ3\Debug\MAPA_PZ3.exe
