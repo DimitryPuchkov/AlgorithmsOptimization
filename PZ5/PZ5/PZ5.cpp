@@ -27,11 +27,11 @@ int main(int argc, char** argv)
    {
       r = getMatrix(1, 10);
       double *M = getMatrix(10, 10);
-      
+      MPI_Scatter(M, 10, MPI_DOUBLE, M, 10, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
    }
-   MPI_Bcast(r, 5, MPI_DOUBLE, 0, MPI_COMM_WORLD);
-   MPI_Scatter(M, 10, MPI_DOUBLE, M, 10, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+   //MPI_Bcast(r, 5, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+   
    if(rank != 0)
    {
       cout << M[3] <<endl;

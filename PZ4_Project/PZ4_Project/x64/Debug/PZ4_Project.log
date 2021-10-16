@@ -1,5 +1,5 @@
 ﻿  PZ4_Project.cpp
 D:\Dmitry\NETI\Algorithms\AlgorithmsOptimization\PZ4_Project\PZ4_Project\PZ4_Project.cpp(28,17): warning C4101: 'j': unreferenced local variable
 D:\Dmitry\NETI\Algorithms\AlgorithmsOptimization\PZ4_Project\PZ4_Project\PZ4_Project.cpp(39,17): warning C4101: 'j': unreferenced local variable
-D:\Dmitry\NETI\Algorithms\AlgorithmsOptimization\PZ4_Project\PZ4_Project\PZ4_Project.cpp(122,15): warning C4101: 'status': unreferenced local variable
+D:\Dmitry\NETI\Algorithms\AlgorithmsOptimization\PZ4_Project\PZ4_Project\PZ4_Project.cpp(54,15): warning C4101: 'status': unreferenced local variable
   PZ4_Project.vcxproj -> D:\Dmitry\NETI\Algorithms\AlgorithmsOptimization\PZ4_Project\x64\Debug\PZ4_Project.exe
