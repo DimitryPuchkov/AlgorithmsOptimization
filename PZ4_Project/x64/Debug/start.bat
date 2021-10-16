@@ -1,3 +1,3 @@
 ECHO off
-mpiexec -n 10 ./PZ4_Project
+mpiexec -n 8 ./PZ4_Project
 pause

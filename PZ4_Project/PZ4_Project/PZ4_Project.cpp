@@ -74,24 +74,31 @@ int main(int argc, char** argv)
 
    if (rank == 0) {
       double n[9] = { 0 };
-      array<int, 9> flag = { 0 };
-      array<int, 9> flagr = { 0 };
+      int *flag = new int[size] {0};
+      int *flagr = new int[size] {0};
       bool w = true;
-      MPI_Request request[9];
+      MPI_Request *request = new MPI_Request[size];
       MPI_Status status;
       for (int i = 1; i < size; i++)
          MPI_Irecv(&n[i - 1], 1, MPI_DOUBLE, i, 100, MPI_COMM_WORLD, &request[i - 1]);
-
-      while (!all_of(flag.begin(), flag.end(), [](int i) {return i == 1; }))
+      bool cont = true;
+      while (cont)
+      {
          for (int i = 1; i < size; i++)
          {
             MPI_Test(&request[i - 1], &flag[i - 1], &status);
             if (flag[i - 1] != 0 && flagr[i - 1] == 0)
             {
                cout << "recived from " << i << " norma: " << n[i - 1] << endl;
-               flagr[i-1] =1;
+               flagr[i - 1] = 1;
             }
          }
+         cont = false;
+         for(int i = 1; i < size; i++)
+            if(flag[i] == 0)
+               cont = true;
+      }
+         
 
          cout << "recived from " << 1 << " norma: " << n[0] << endl;
 
