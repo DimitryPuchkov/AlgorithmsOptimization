@@ -1,0 +1,5 @@
+﻿  MABA_GRAPH_1.cpp
+C:\Users\lemon\source\repos\MABA_GRAPH_1\MABA_GRAPH_1\MABA_GRAPH_1.cpp(81,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\lemon\source\repos\MABA_GRAPH_1\MABA_GRAPH_1\MABA_GRAPH_1.cpp(87,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\lemon\source\repos\MABA_GRAPH_1\MABA_GRAPH_1\MABA_GRAPH_1.cpp(92,25): warning C4018: '<': signed/unsigned mismatch
+  MABA_GRAPH_1.vcxproj -> C:\Users\lemon\source\repos\MABA_GRAPH_1\Debug\MABA_GRAPH_1.exe
