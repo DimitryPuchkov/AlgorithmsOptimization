@@ -1,0 +1,4 @@
+﻿  PZ6.cpp
+C:\Users\lemon\source\repos\PZ6\PZ6\PZ6.cpp(89,19): warning C4018: '>': signed/unsigned mismatch
+C:\Users\lemon\source\repos\PZ6\PZ6\PZ6.cpp(111,25): warning C4018: '<': signed/unsigned mismatch
+  PZ6.vcxproj -> C:\Users\lemon\source\repos\PZ6\Debug\PZ6.exe
