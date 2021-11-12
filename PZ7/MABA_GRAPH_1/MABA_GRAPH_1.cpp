@@ -105,12 +105,64 @@ void Task2()
 
 }
 
+double Sum(int n, double* a)
+{
+    double s = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        s += a[i];
+    }
+
+    return s;
+}
+//-----------------------------------------------------------------------------
+double SumVectorVector(vector< vector<double> >& a)
+{
+    double s = 0;
+
+    int sz1 = a.size();
+    for (int i = 0; i < sz1; i++)
+    {
+        int sz2 = a[i].size();
+        for (int j = 0; j < sz2; j++)
+        {
+            s += a[i][j];
+        }
+    }
+
+    return s;
+}
+
+//-----------------------------------------------------------------------------
+void TestSumMatrix(int n, int m)
+{
+    vector< vector<double> > a;
+    a.resize(n, vector<double>(m, 1));
+
+    cout << SumVectorVector(a) << '\t' << Sum(n*m, &a[0][0]) << endl;
+}
+
+
+void Task3()
+{
+    int n, m;
+
+    cout << "n = ";
+    cin >> n;
+    cout << "\nm = ";
+    cin >> m;
+    cout << "\n";
+
+    TestSumMatrix(n, m);
+
+}
+
 
 int main()
 {
 
-   Task2();
-
+   Task3();
 
 }
 
