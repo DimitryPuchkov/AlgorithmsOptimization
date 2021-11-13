@@ -4,6 +4,7 @@
 #include <stack>
 #include <queue>
 #include <fstream>
+#include <string>
 
 using namespace std;
 
@@ -67,6 +68,30 @@ vector<vector<int>> getAdditionalList(vector<vector<int>> vertexList, int m)
    return additionalList;
 }
 
+vector <vector<int>> getVertexListForFullGraph(string fileName, int *m)
+{
+   ifstream fin;
+
+   fin.open(fileName);
+
+   fin >> *m;
+
+   vector <vector<int>> a(*m, vector<int>(2));
+
+   for (int i = 0; i < *m; i++)
+   {
+
+      int v = 0;
+      fin >> v;
+      if (i > 0)
+         a[i - 1][1] = v;
+
+      a[i][0] = v;
+
+   }
+
+   return a;
+}
 void Task1()
 {
 
@@ -81,28 +106,88 @@ void Task1()
 
 void Task2()
 {
-   int m = 0, m2 = 0;
-   vector<vector<int>> vertexList1 = getVertexList("1.txt", &m);
+   ifstream fin;
 
-   vector<vector<int>> vertexList2 = getVertexList("2.txt", &m2);
+   fin.open("n.txt");
 
-   vector<vector<int>> associatedList;
+   int count = 0;
 
-   for (int i = 0; i < vertexList1.size(); i++)
+   fin >> count; // files number
+
+   fin.close();
+
+   int m = 0;
+
+   int max_val = -99999;
+
+   /*vector<vector<int>> a = getVertexListForFullGraph("1.txt", &m);
+
+   for (int i = 0; i < a.size(); i++)
    {
-      associatedList.push_back(vertexList1[i]);
+      cout << a[i][0] << " " << a[i][1] << endl;
+   }*/
+
+   //vector<int> arr1;
+   //vector<int> arr2;
+   vector<vector<int>> arr(count); // array of arrays of vertexes
+
+   int len = 0;
+
+   for (int i = 0; i < count; i++) // scanning graphs
+   {
+      fin.open(to_string(i + 1) + ".txt");
+      fin >> len;
+      for (int j = 0; j < len; j++)
+      {
+         int elem = 0;
+         fin >> elem;
+
+         if (elem > max_val)
+            max_val = elem;
+
+         arr[i].push_back(elem);
+
+      }
+      fin.close();
    }
 
-   for (int j = 0; j < vertexList2.size(); j++)
+
+   
+   /*int arr2_len = 0;
+
+   ifstream fin3;
+
+   fin3.open("2.txt");
+
+   fin3 >> arr2_len;
+
+   for (int i = 0; i < arr2_len; i++)
    {
-      if (vertexList1[j][0] != vertexList2[j][0] || vertexList1[j][1] != vertexList2[j][1])
-         associatedList.push_back(vertexList2[j]);
-   }
+      int elem = 0;
+      fin3 >> elem;
 
-   vector<vector<int>> graph = getAdditionalList(associatedList, m);
+      if (elem > max_val)
+         max_val = elem;
 
-   writeGraph(graph, "out.txt");
+      arr2.push_back(elem);
 
+   }*/
+
+
+
+   cout << max_val;
+
+   vector<vector<vector<int>>> V(count, vector<vector<int>>(max_val)); // create additional list of gull graphs
+
+      for (int i = 0; i < count; i++)
+         for (int j = 0; j < arr[i].size(); j++)
+         {
+            for (int k = 0; k < arr[i].size(); k++)
+               if(k != j)
+                  V[i][arr[i][j] - 1].push_back(k);
+         }
+   return;
+  
 }
 
 double Sum(int n, double* a)
@@ -162,7 +247,9 @@ void Task3()
 int main()
 {
 
-   Task3();
+   double c =  0.0 / -1.0;
+
+
 
 }
 
