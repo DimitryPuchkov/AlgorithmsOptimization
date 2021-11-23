@@ -29,7 +29,7 @@ void writeGraph(vector<vector<int>> graph, string fileName)
    }
 }
 
-vector<vector<int>> getVertexList(string fileName, int *m)
+vector<vector<int>> getVertexList(string fileName, int *m) // получение пар вершин и ребер из файла
 {
    ifstream fin;
 
@@ -55,7 +55,7 @@ vector<vector<int>> getVertexList(string fileName, int *m)
    return a;
 }
 
-vector<vector<int>> getAdditionalList(vector<vector<int>> vertexList, int m)
+vector<vector<int>> getAdditionalList(vector<vector<int>> vertexList, int m) // формирование списка смежных вершин
 {
    vector <vector<int>> additionalList(m + 1);
 
@@ -118,17 +118,9 @@ void Task2()
 
    int m = 0;
 
-   int max_val = -99999;
+   int max_val = INT_MAX;
 
-   /*vector<vector<int>> a = getVertexListForFullGraph("1.txt", &m);
-
-   for (int i = 0; i < a.size(); i++)
-   {
-      cout << a[i][0] << " " << a[i][1] << endl;
-   }*/
-
-   //vector<int> arr1;
-   //vector<int> arr2;
+   
    vector<vector<int>> arr(count); // array of arrays of vertexes
 
    int len = 0;
@@ -153,31 +145,12 @@ void Task2()
 
 
    
-   /*int arr2_len = 0;
-
-   ifstream fin3;
-
-   fin3.open("2.txt");
-
-   fin3 >> arr2_len;
-
-   for (int i = 0; i < arr2_len; i++)
-   {
-      int elem = 0;
-      fin3 >> elem;
-
-      if (elem > max_val)
-         max_val = elem;
-
-      arr2.push_back(elem);
-
-   }*/
-
+   
 
 
    cout << max_val;
 
-   vector<vector<vector<int>>> V(count, vector<vector<int>>(max_val)); // create additional list of gull graphs
+   vector<vector<vector<int>>> V(count, vector<vector<int>>(max_val)); // create additional list of full graphs
 
       for (int i = 0; i < count; i++)
          for (int j = 0; j < arr[i].size(); j++)
@@ -194,17 +167,21 @@ double Sum(int n, double* a)
 {
     double s = 0;
 
-    for (int i = 0; i < n; i++)
+    
+
+    for (int i = 0; i < n; i++)  
     {
-        s += a[i];
+       double f = a[i];
+       s += a[i];
     }
 
     return s;
 }
-//-----------------------------------------------------------------------------
-double SumVectorVector(vector< vector<double> >& a)
+
+double SumVectorVector(vector< vector<double> >&a) 
 {
     double s = 0;
+
 
     int sz1 = a.size();
     for (int i = 0; i < sz1; i++)
@@ -219,13 +196,19 @@ double SumVectorVector(vector< vector<double> >& a)
     return s;
 }
 
-//-----------------------------------------------------------------------------
 void TestSumMatrix(int n, int m)
 {
     vector< vector<double> > a;
     a.resize(n, vector<double>(m, 1));
 
-    cout << SumVectorVector(a) << '\t' << Sum(n*m, &a[0][0]) << endl;
+    double s = 0;
+
+    for (int i = 0; i < n; i++) // решение проблемы совместимости массива и контейнера для подпрограммы Sum
+       s += Sum(m, &a[i][0]);
+
+    cout <<"Correct value of s: " << s << endl;
+
+    cout << SumVectorVector(a) << '\t' << Sum(n * m, &a[0][0]) << endl;
 }
 
 
@@ -247,7 +230,7 @@ void Task3()
 int main()
 {
 
-   double c =  0.0 / -1.0;
+   Task3();
 
 
 
