@@ -1,4 +1,0 @@
-﻿  MABA_GRAPH_1.cpp
-C:\Users\lemon\OneDrive\Рабочий стол\NSTU_projects\AlgorithmsOptimization\PZ7\MABA_GRAPH_1\MABA_GRAPH_1.cpp(186,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\lemon\OneDrive\Рабочий стол\NSTU_projects\AlgorithmsOptimization\PZ7\MABA_GRAPH_1\MABA_GRAPH_1.cpp(189,30): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  MABA_GRAPH_1.vcxproj -> C:\Users\lemon\OneDrive\Рабочий стол\NSTU_projects\AlgorithmsOptimization\PZ7\x64\Debug\MABA_GRAPH_1.exe
